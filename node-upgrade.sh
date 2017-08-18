@@ -14,8 +14,11 @@ else
   new_verion=$1
   timer_start=`date +%s`
 
+  . ~/.nvm/nvm.sh
+
   echo -e "${YELLOW}#install-new-version${NORMAL} $new_verion"
   nvm install $new_verion
+  nvm use $new_version
   nvm alias default $new_verion
 
   echo -e "${YELLOW}#install-npm-dependencies${NORMAL}"
